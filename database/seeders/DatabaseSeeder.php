@@ -16,7 +16,21 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\User::factory(1)->create();
         \App\Models\Project::factory(3)->create();
-
+        \App\Models\Sprint::factory()->create([
+            'project_id' => '1',
+            'start_date' => now()->modify('-28 days'),
+            'name' => 'apple',
+        ]);
+        \App\Models\Sprint::factory()->create([
+            'project_id' => '1',
+            'start_date' => now()->modify('-14 days'),
+            'name' => 'boooouuurrns',
+        ]);
+        \App\Models\Sprint::factory()->create([
+            'project_id' => '1',
+            'start_date' => now(),
+            'name' => 'catamaran',
+        ]);
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
