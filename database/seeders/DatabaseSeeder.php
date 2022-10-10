@@ -19,16 +19,19 @@ class DatabaseSeeder extends Seeder
         \App\Models\Sprint::factory()->create([
             'project_id' => '1',
             'start_date' => now()->modify('-28 days'),
+            'end_date' => now()->modify('-14 days'),
             'name' => 'apple',
         ]);
         \App\Models\Sprint::factory()->create([
             'project_id' => '1',
             'start_date' => now()->modify('-14 days'),
+            'end_date' => now(),
             'name' => 'boooouuurrns',
         ]);
         \App\Models\Sprint::factory()->create([
             'project_id' => '1',
             'start_date' => now(),
+            'end_date' => now()->modify('+14 days'),
             'name' => 'catamaran',
         ]);
         // \App\Models\User::factory()->create([
