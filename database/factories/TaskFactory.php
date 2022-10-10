@@ -16,8 +16,11 @@ class TaskFactory extends Factory
      */
     public function definition()
     {
+        $description = fake()->sentences();
         return [
-            //
+            'sprint_id' => '1',
+            'name' => fake()->sentence(),
+            'description' => implode(" ", $description),
         ];
     }
 }
