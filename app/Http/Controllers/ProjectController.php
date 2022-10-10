@@ -61,6 +61,9 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
+        if ($project->id !== auth()->user()->id) {
+            abort(403);
+        }
         $sprints = Sprint::where('project_id', $project->id)->get();
         return Inertia::render('OneProject', [
             "project" => $project,
